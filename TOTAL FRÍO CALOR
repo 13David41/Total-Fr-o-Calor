@@ -1,4 +1,39 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function TotalFrioCalor() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    message: ''
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Datos del formulario:', formData);
+    
+    // Enviar a WhatsApp
+    const mensaje = `Hola, soy ${formData.name}. Mi teléfono es ${formData.phone}. ${formData.message}`;
+    const enlace = `https://wa.me/34643153016?text=${encodeURIComponent(mensaje)}`;
+    window.open(enlace, '_blank');
+    
+    // Limpiar formulario
+    setFormData({ name: '', phone: '', message: '' });
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-800">
       {/* HEADER */}
@@ -241,22 +276,34 @@ export default function TotalFrioCalor() {
             </div>
 
             <div className="p-12">
-              <form className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Nombre"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="w-full border border-slate-300 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
                 />
 
                 <input
                   type="tel"
+                  name="phone"
                   placeholder="Teléfono"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
                   className="w-full border border-slate-300 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
                 />
 
                 <textarea
                   rows="5"
+                  name="message"
                   placeholder="¿Qué necesitas?"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="w-full border border-slate-300 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
                 ></textarea>
 
@@ -266,6 +313,12 @@ export default function TotalFrioCalor() {
                 >
                   Solicitar Presupuesto
                 </button>
+
+                {submitted && (
+                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-2xl text-center">
+                    ✓ ¡Mensaje enviado! Abriendo WhatsApp...
+                  </div>
+                )}
               </form>
             </div>
           </div>
