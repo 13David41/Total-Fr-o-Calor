@@ -1,0 +1,281 @@
+export default function TotalFrioCalor() {
+  return (
+    <div className="min-h-screen bg-white text-slate-800">
+      {/* HEADER */}
+      <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+          <div>
+            <h1 className="text-2xl font-black tracking-tight text-black-900">
+              TOTAL <span className="text-blue-500">FRÍO</span>
+              <span className="text-orange-500"> CALOR</span>
+            </h1>
+            <p className="text-xs text-slate-500">Climatización profesional</p>
+          </div>
+
+          <nav className="hidden md:flex gap-8 font-semibold text-sm">
+            <a href="#servicios" className="hover:text-orange-500 transition">Servicios</a>
+            <a href="#nosotros" className="hover:text-orange-500 transition">Nosotros</a>
+            <a href="#contacto" className="hover:text-orange-500 transition">Contacto</a>
+          </nav>
+
+          <a
+            href="tel:643153016"
+            className="bg-orange-500 hover:bg-orange-600 transition text-white px-5 py-3 rounded-2xl font-bold shadow-lg"
+          >
+            Llamar Ahora
+          </a>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1581092918484-8313e4b5f7f3?q=80&w=2070&auto=format&fit=crop"
+          className="absolute inset-0 w-full h-full object-cover"
+          alt="climatizacion"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 to-black/60"></div>
+
+        <div className="relative z-10 max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+          <div className="text-white">
+            <span className="bg-orange-500/20 border border-orange-400 text-orange-300 px-4 py-2 rounded-full text-sm font-semibold">
+              Instalación • Mantenimiento • Reparación
+            </span>
+
+            <h2 className="text-5xl md:text-7xl font-black leading-tight mt-6">
+              Especialistas en
+              <span className="text-orange-400"> Aire Acondicionado</span>
+            </h2>
+
+            <p className="mt-6 text-lg text-slate-200 max-w-xl leading-relaxed">
+              Soluciones completas de climatización para hogares, oficinas y negocios.
+              Servicio rápido, técnico certificado y precios transparentes.
+            </p>
+
+            <div className="flex flex-wrap gap-4 mt-8">
+              <a
+                href="https://wa.me/34643153016"
+                className="bg-orange-500 hover:bg-orange-600 transition px-7 py-4 rounded-2xl font-bold shadow-2xl"
+              >
+                WhatsApp
+              </a>
+
+              <a
+                href="#servicios"
+                className="border border-white/40 hover:bg-white hover:text-slate-900 transition px-7 py-4 rounded-2xl font-bold"
+              >
+                Ver Servicios
+              </a>
+            </div>
+          </div>
+
+          <div className="hidden lg:flex justify-center">
+            <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-white shadow-2xl max-w-md">
+              <h3 className="text-3xl font-black mb-6">Atención inmediata</h3>
+
+              <div className="space-y-4 text-lg">
+                <div className="bg-white/10 rounded-2xl p-4">
+                  📞 643 153 016
+                </div>
+
+                <div className="bg-white/10 rounded-2xl p-4">
+                  📞 614 467 351
+                </div>
+              </div>
+
+              <div className="mt-8 grid grid-cols-2 gap-4 text-center">
+                <div className="bg-white/10 rounded-2xl p-4">
+                  <p className="text-3xl font-black text-orange-400">24h</p>
+                  <p className="text-sm">Respuesta rápida</p>
+                </div>
+
+                <div className="bg-white/10 rounded-2xl p-4">
+                  <p className="text-3xl font-black text-orange-400">100%</p>
+                  <p className="text-sm">Garantizado</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="servicios" className="py-28 bg-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-orange-500 font-bold uppercase tracking-widest">Servicios</p>
+            <h2 className="text-5xl font-black text-slate-900 mt-4">
+              Todo lo que necesitas para tu confort
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+            {[
+              {
+                icon: '❄️',
+                title: 'Aire acondicionado',
+                text: 'Instalación de sistemas split, conductos y climatización integral.'
+              },
+              {
+                icon: '🔥',
+                title: 'Calefacción',
+                text: 'Soluciones eficientes para invierno con ahorro energético.'
+              },
+              {
+                icon: '🛠️',
+                title: 'Mantenimiento',
+                text: 'Revisión y mantenimiento preventivo para máximo rendimiento.'
+              },
+              {
+                icon: '⚡',
+                title: 'Reparaciones rápidas',
+                text: 'Asistencia técnica profesional y reparación urgente.'
+              }
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300"
+              >
+                <div className="text-5xl mb-5">{service.icon}</div>
+                <h3 className="text-2xl font-black mb-4 text-blue-950">{service.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{service.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="nosotros" className="py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2070&auto=format&fit=crop"
+              className="rounded-3xl shadow-2xl"
+              alt="tecnico"
+            />
+          </div>
+
+          <div>
+            <p className="text-orange-500 font-bold uppercase tracking-widest">Quiénes somos</p>
+
+            <h2 className="text-5xl font-black text-slate-900 mt-4 leading-tight">
+              Profesionales en climatización y confort
+            </h2>
+
+            <p className="mt-8 text-lg text-slate-600 leading-relaxed">
+              En Total Frío Calor trabajamos con instalaciones modernas, eficientes y adaptadas a cada cliente.
+              Nuestro objetivo es ofrecer confort, ahorro energético y un servicio rápido con garantía.
+            </p>
+
+            <div className="grid grid-cols-2 gap-6 mt-10">
+              <div className="bg-slate-100 rounded-2xl p-6">
+                <h3 className="text-4xl font-black text-blue-900">+500</h3>
+                <p className="text-slate-600 mt-2">Instalaciones realizadas</p>
+              </div>
+
+              <div className="bg-slate-100 rounded-2xl p-6">
+                <h3 className="text-4xl font-black text-blue-900">24/7</h3>
+                <p className="text-slate-600 mt-2">Atención rápida</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-gradient-to-r from-blue-950 to-blue-800 text-white text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-5xl font-black leading-tight">
+            Tu confort es nuestra prioridad
+          </h2>
+
+          <p className="mt-6 text-lg text-slate-200">
+            Pide tu presupuesto sin compromiso y recibe atención profesional inmediata.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-5 mt-10">
+            <a
+              href="tel:643153016"
+              className="bg-orange-500 hover:bg-orange-600 transition px-8 py-4 rounded-2xl font-bold shadow-xl"
+            >
+              📞 Llamar
+            </a>
+
+            <a
+              href="https://wa.me/34643153016"
+              className="bg-white text-blue-950 hover:bg-slate-100 transition px-8 py-4 rounded-2xl font-bold shadow-xl"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contacto" className="py-28 bg-slate-100">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="bg-white rounded-[40px] shadow-2xl overflow-hidden grid lg:grid-cols-2">
+            <div className="p-12 bg-blue-950 text-white">
+              <p className="uppercase tracking-widest text-orange-400 font-bold">
+                Contacto
+              </p>
+
+              <h2 className="text-5xl font-black mt-4">
+                Hablemos
+              </h2>
+
+              <div className="space-y-6 mt-10 text-lg">
+                <div>
+                  <p className="font-bold text-orange-400">Teléfono</p>
+                  <p>+34 643 153 016</p>
+                  <p>+34 614 467 351</p>
+                </div>
+
+                <div>
+                  <p className="font-bold text-orange-400">Servicios</p>
+                  <p>Instalación • Mantenimiento • Reparación</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-12">
+              <form className="space-y-5">
+                <input
+                  type="text"
+                  placeholder="Nombre"
+                  className="w-full border border-slate-300 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
+                />
+
+                <input
+                  type="tel"
+                  placeholder="Teléfono"
+                  className="w-full border border-slate-300 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
+                />
+
+                <textarea
+                  rows="5"
+                  placeholder="¿Qué necesitas?"
+                  className="w-full border border-slate-300 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
+                ></textarea>
+
+                <button
+                  type="submit"
+                  className="w-full bg-orange-500 hover:bg-orange-600 transition text-white font-bold py-4 rounded-2xl shadow-lg"
+                >
+                  Solicitar Presupuesto
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-slate-950 text-slate-400 py-10 text-center">
+        <p>© 2025 Total Frío Calor · Todos los derechos reservados</p>
+      </footer>
+    </div>
+  )
+}
